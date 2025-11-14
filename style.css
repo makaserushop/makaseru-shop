@@ -74,29 +74,64 @@ button:hover {
   margin-bottom: 20px;
 }
 <style>
-.categories {
-display: flex;
-gap: 10px;
-margin-bottom: 20px;
-justify-content: center;
-flex-wrap: wrap;
+
+
+.sidebar h3 {
+text-align: center;
+margin-bottom: 10px;
+color: #ff64b4;
 }
 
 
-.cat-btn {
+/* Layout para productos + sidebar */
+.products-section {
+display: flex;
+gap: 30px;
+justify-content: center;
+align-items: flex-start;
+}
+
+
+/* --- Carrito arriba a la derecha --- */
+.top-header {
+position: relative;
+}
+
+
+.cart-top {
+position: absolute;
+top: 10px;
+right: 20px;
+display: flex;
+gap: 10px;
+align-items: center;
+}
+
+
+.cart-link {
 background: #ff9ecf;
+padding: 8px 14px;
+border-radius: 20px;
 color: white;
+text-decoration: none;
+font-weight: bold;
+}
+
+
+.pay-top-btn {
+background: #82ffd9;
 border: none;
-padding: 10px 18px;
+padding: 8px 14px;
 border-radius: 20px;
 cursor: pointer;
 font-weight: bold;
-transition: 0.2s;
 }
 
 
-.cat-btn:hover {
-background: #82ffd9;
+.pay-top-btn:hover,
+.cart-link:hover {
 transform: scale(1.05);
 }
+
+
 </style>
