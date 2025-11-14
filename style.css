@@ -1,103 +1,16 @@
-/* Makaseru Shop - Candy Pop + Menta Style */
-
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: #fff;
-  color: #333;
-}
-
-header {
-  background: linear-gradient(90deg, #ff9edb, #a5ffe4);
-  padding: 20px;
-  text-align: center;
-  color: #fff;
-}
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
-
-.hero {
-  padding: 80px 20px;
-  text-align: center;
-  background: #ffeef8;
-}
-
-.products-section {
-  padding: 40px;
-  text-align: center;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.product {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-}
-
-button {
-  background: #ff72c6;
-  border: none;
-  padding: 10px 20px;
-  color: #fff;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #ff4fb9;
-}
-
-.cart-section {
-  padding: 40px;
-  background: #f0fff8;
-}
-
-#cart-items {
-  margin-bottom: 20px;
-}
-<style>
-
-
-.sidebar h3 {
-text-align: center;
-margin-bottom: 10px;
-color: #ff64b4;
+<!-- ============================= -->
+font-weight: bold;
+transition: 0.2s;
 }
 
 
-/* Layout para productos + sidebar */
-.products-section {
-display: flex;
-gap: 30px;
-justify-content: center;
-align-items: flex-start;
+.cat-btn:hover {
+background: #82ffd9;
+transform: scale(1.05);
 }
 
 
-/* --- Carrito arriba a la derecha --- */
-.top-header {
-position: relative;
-}
-
-
+/* CART TOP */
 .cart-top {
 position: absolute;
 top: 10px;
@@ -126,12 +39,4 @@ border-radius: 20px;
 cursor: pointer;
 font-weight: bold;
 }
-
-
-.pay-top-btn:hover,
-.cart-link:hover {
-transform: scale(1.05);
-}
-
-
 </style>
