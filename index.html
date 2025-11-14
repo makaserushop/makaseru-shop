@@ -6,14 +6,12 @@
   <title>Makaseru Shop</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="site-header">
-    <div class="brand">
-      <!-- reemplaza por tu logo si quieres: <img src="logo.png" alt="Makaseru Shop" class="logo-img"> -->
-      <h1 class="logo.png">Makaseru Shop</h1>
-    </div>
+    <h1 class="logo-text">Makaseru Shop</h1>
 
-    <button id="cart-btn" class="cart-button" aria-label="Abrir carrito">
+    <button id="cart-btn" class="cart-button">
       🛒 <span id="cart-count">0</span>
     </button>
   </header>
@@ -31,21 +29,21 @@
 
   <main class="main-content">
     <section class="hero">
-      <h2>¡Regalos, sorpresas y más!</h2>
-      <p>Encuentra detalles únicos para toda ocasión.</p>
+      <h2>¡Regalos Cute & Candy Pop!</h2>
+      <p>Detalles mágicos para toda ocasión.</p>
     </section>
 
-    <section class="products-section" aria-labelledby="productos-title">
-      <h2 id="productos-title">Productos</h2>
+    <section class="products-section">
+      <h2>Productos</h2>
       <div id="product-list" class="products-grid"></div>
     </section>
   </main>
 
-  <!-- Panel carrito (deslizable/overlay) -->
-  <aside id="cart-panel" class="cart-panel hidden" aria-label="Carrito">
+  <!-- Carrito lateral -->
+  <aside id="cart-panel" class="cart-panel hidden">
     <div class="cart-panel-header">
       <h3>Tu carrito</h3>
-      <button id="close-cart" class="icon-btn" title="Cerrar">✕</button>
+      <button id="close-cart" class="icon-btn">✕</button>
     </div>
 
     <div id="cart-items" class="cart-items"></div>
@@ -57,14 +55,13 @@
       <div class="cart-row">
         <strong>Total:</strong><strong id="cart-total">$0</strong>
       </div>
-      <a id="checkout-link" href="pago.html" class="pay-btn">💳 Pagar</a>
+      <a href="pago.html" class="pay-btn">💳 Pagar</a>
     </div>
   </aside>
 
+  <!-- overlay corregido -->
   <div id="overlay" class="overlay hidden"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
