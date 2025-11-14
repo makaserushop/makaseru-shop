@@ -1,53 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Makaseru Shop</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-  <header>
-    <h1 class="logo.png">Makaseru Shop</h1>
-
-    <!-- CARRITO ARRIBA A LA DERECHA -->
-    <div class="cart-icon" onclick="toggleCart()">
-      🛒 <span id="cart-count">0</span>
+  <header class="site-header">
+    <div class="brand">
+      <!-- reemplaza por tu logo si quieres: <img src="logo.png" alt="Makaseru Shop" class="logo-img"> -->
+      <h1 class="logo-text">Makaseru Shop</h1>
     </div>
+
+    <button id="cart-btn" class="cart-button" aria-label="Abrir carrito">
+      🛒 <span id="cart-count">0</span>
+    </button>
   </header>
 
-  <!-- PANEL DEL CARRITO -->
-  <div id="cart-panel" class="cart-panel hidden">
-    <h3>Tu Carrito</h3>
-    <div id="cart-items"></div>
-    <p id="cart-total"></p>
-    <a href="pago.html" class="pay-btn">Pagar</a>
-  </div>
-
-  <!-- INICIO -->
-  <section class="hero">
-    <h2>Regalos Candy Pop ✨</h2>
-    <p>Detalles cute y llenos de color</p>
-  </section>
-
-  <!-- CATEGORÍAS -->
   <aside class="sidebar">
     <h3>Categorías</h3>
-    <button class="cat-btn" data-category="all">Todos</button>
-    <button class="cat-btn" data-category="cajas">Cajas de regalo</button>
-    <button class="cat-btn" data-category="lucky">Lucky Game</button>
-    <button class="cat-btn" data-category="accesorios">Accesorios</button>
-    <button class="cat-btn" data-category="hqb">HQ Beads</button>
+    <nav>
+      <button class="cat-btn" data-category="all">Todos</button>
+      <button class="cat-btn" data-category="cajas">Cajas de regalo</button>
+      <button class="cat-btn" data-category="lucky">Lucky Game</button>
+      <button class="cat-btn" data-category="accesorios">Accesorios</button>
+      <button class="cat-btn" data-category="hqb">HQ Beads</button>
+    </nav>
   </aside>
 
-  <!-- PRODUCTOS -->
-  <section class="products-section">
-    <div class="products" id="product-list"></div>
-  </section>
+  <main class="main-content">
+    <section class="hero">
+      <h2>¡Regalos, sorpresas y más!</h2>
+      <p>Encuentra detalles únicos para toda ocasión.</p>
+    </section>
+
+    <section class="products-section" aria-labelledby="productos-title">
+      <h2 id="productos-title">Productos</h2>
+      <div id="product-list" class="products-grid"></div>
+    </section>
+  </main>
+
+  <!-- Panel carrito (deslizable/overlay) -->
+  <aside id="cart-panel" class="cart-panel hidden" aria-label="Carrito">
+    <div class="cart-panel-header">
+      <h3>Tu carrito</h3>
+      <button id="close-cart" class="icon-btn" title="Cerrar">✕</button>
+    </div>
+
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-summary">
+      <div class="cart-row">
+        <span>Artículos:</span><span id="cart-items-count">0</span>
+      </div>
+      <div class="cart-row">
+        <strong>Total:</strong><strong id="cart-total">$0</strong>
+      </div>
+      <a id="checkout-link" href="pago.html" class="pay-btn">💳 Pagar</a>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay hidden"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
