@@ -6,41 +6,48 @@
   <title>Makaseru Shop</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <header>
-    <h1>Makaseru Shop</h1>
+    <h1 class="logo">Makaseru Shop</h1>
 
-    <nav class="top-right">
-      <button id="cart-btn">🛒 Carrito</button>
-    </nav>
+    <!-- CARRITO ARRIBA A LA DERECHA -->
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 <span id="cart-count">0</span>
+    </div>
   </header>
 
+  <!-- PANEL DEL CARRITO -->
+  <div id="cart-panel" class="cart-panel hidden">
+    <h3>Tu Carrito</h3>
+    <div id="cart-items"></div>
+    <p id="cart-total"></p>
+    <a href="pago.html" class="pay-btn">Pagar</a>
+  </div>
+
+  <!-- INICIO -->
+  <section class="hero">
+    <h2>Regalos Candy Pop ✨</h2>
+    <p>Detalles cute y llenos de color</p>
+  </section>
+
+  <!-- CATEGORÍAS -->
   <aside class="sidebar">
     <h3>Categorías</h3>
-    <ul>
-      <li data-category="all">Todos</li>
-      <li data-category="cajas">Cajas de regalo</li>
-      <li data-category="lucky">Lucky Game</li>
-      <li data-category="accesorios">Accesorios</li>
-      <li data-category="hqbeads">HQ Beads</li>
-    </ul>
+    <button class="cat-btn" data-category="all">Todos</button>
+    <button class="cat-btn" data-category="cajas">Cajas de regalo</button>
+    <button class="cat-btn" data-category="lucky">Lucky Game</button>
+    <button class="cat-btn" data-category="accesorios">Accesorios</button>
+    <button class="cat-btn" data-category="hqb">HQ Beads</button>
   </aside>
 
-  <main>
-    <section id="products" class="products-section">
-      <h2>Productos</h2>
-      <div class="products" id="product-list"></div>
-    </section>
-
-    <section id="cart" class="cart-section hidden">
-      <h2>Carrito</h2>
-      <div id="cart-items"></div>
-      <p id="cart-total"></p>
-      <button id="checkout-btn">💳 Pagar</button>
-    </section>
-  </main>
+  <!-- PRODUCTOS -->
+  <section class="products-section">
+    <div class="products" id="product-list"></div>
+  </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+
