@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagar - Makaseru Shop</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {
+      background: #fff7fc;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    header {
+      padding: 20px;
+      background: #ffb7e1;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .payment-container {
+      max-width: 550px;
+      margin: 40px auto;
+      background: #ffe2f4;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(255, 0, 140, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ff40a1;
+      margin-bottom: 10px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+      color: #ff40a1;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 10px;
+      border: 2px solid #ffb7df;
+      background: white;
+      font-size: 15px;
+    }
+
+    .summary {
+      background: white;
+      padding: 18px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 2px 6px rgba(255, 0, 140, 0.15);
+    }
+
+    .summary-item {
+      padding: 6px 0;
+      border-bottom: 1px solid #ffd7ee;
+      font-size: 15px;
+    }
+
+    .summary-total {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 18px;
+      color: #ff40a1;
+      text-align: right;
+    }
+
+    .confirm-btn {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: #b3ffe6;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 17px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .confirm-btn:hover {
+      background: #8affd9;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #ff40a1;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">Makaseru Shop</h1>
+</header>
+
+<div class="payment-container">
+  <h2>Finalizar Compra</h2>
+
+  <!-- FORMULARIO -->
+  <label>Nombre Completo</label>
+  <input type="text" placeholder="Tu nombre" required />
+
+  <label>Dirección</label>
+  <input type="text" placeholder="Calle, número, comuna" required />
+
+  <label>Correo Electrónico</label>
+  <input type="email" placeholder="correo@ejemplo.com" required />
+
+  <label>Método de Pago</label>
+  <input type="text" placeholder="Tarjeta / Transferencia / Contraentrega" required />
+
+  <!-- RESUMEN DEL CARRITO -->
+  <div class="summary">
+    <h3>Resumen de Productos</h3>
+    <div id="summary-items"></div>
+    <p id="summary-total" class="summary-total"></p>
+  </div>
+
+  <button class="confirm-btn" onclick="confirmarCompra()">Confirmar Compra</button>
+
+  <a href="index.html" class="back">← Volver a la tienda</a>
+</div>
+
+<script>
+  // Leer carrito desde localStorage
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const itemsBox = document.getElementById("summary-items");
+  const totalBox = document.getElementById("summary-total");
+
+  function cargarResumen() {
+    itemsBox.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+      itemsBox.innerHTML += `
+        <div class="summary-item">
+          ${item.name} — $${item.price}
+        </div>
+      `;
+      total += item.price;
+    });
+
+    totalBox.innerText = "Total: $" + total;
+  }
+
+  cargarResumen();
+
+  function confirmarCompra() {
+    alert("¡Gracias por tu compra! 💖 Tu pedido está siendo procesado.");
+
+    // Vaciar carrito
+    localStorage.removeItem("cart");
+
+    // Volver al inicio
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>
